@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  main {
+    margin: 20px;
+  }
+  
+  #boxoffice-results {
+    margin-top: 20px;
+  }
+  
+  .movie-item {
+    margin-bottom: 10px;
+  }
+  
