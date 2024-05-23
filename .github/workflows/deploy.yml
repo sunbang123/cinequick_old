@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # 또는 배포를 위한 다른 브랜치
+      - main  # 배포를 위한 브랜치
 
 jobs:
   build-and-deploy:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '14'
@@ -21,11 +21,12 @@ jobs:
       - name: Install dependencies
         run: cd backend && npm install
 
-      - name: Build project
-        run: cd backend && npm run build
+      # 빌드 단계가 필요 없으면 주석 처리 또는 제거
+      # - name: Build project
+      #   run: cd backend && npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./frontend  # 빌드 출력 디렉토리
+          publish_dir: ./frontend  # 빌드 출력 디렉토리 또는 정적 파일 디렉토리
