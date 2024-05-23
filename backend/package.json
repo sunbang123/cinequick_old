@@ -4,7 +4,8 @@
     "description": "A movie box office web application",
     "main": "server.js",
     "scripts": {
-      "start": "node backend/server.js"
+      "start": "node server.js",
+      "build": "echo 'No build step needed'"
     },
     "dependencies": {
       "axios": "^0.21.1",
